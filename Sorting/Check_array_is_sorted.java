@@ -27,6 +27,6 @@ public class Check_array_is_sorted {
         }
 
         System.out.println(isSorted);
-        sc.close();
+
     }
 }
