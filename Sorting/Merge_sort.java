@@ -3,11 +3,6 @@ public class Merge_sort {
 
     public static void main(String[] args) {
         int[] arr = {5, 2, 8, 3};
-        for (int ele : arr) {
-            System.err.println(ele + " ");
-
-        }
-        Mergesort(arr);
         System.out.println("Sorted Array:");
         for (int ele : arr) {
             System.out.print(ele + " ");
