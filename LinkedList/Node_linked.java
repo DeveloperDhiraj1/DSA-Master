@@ -18,16 +18,11 @@ public class Node_linked {
         Node c = new Node(30);
         Node d = new Node(40);
         Node e = new Node(50);
-        System.out.println(a.val);
-        System.out.println(b.val);
         a.next = b;
         b.next = c;
         c.next = d;
         d.next = e;
-        System.out.println(a);
-        System.out.println(b);
-        System.out.println(c);
-        System.out.println(d);
+        System.out.println(a.val);
 
     }
 }
