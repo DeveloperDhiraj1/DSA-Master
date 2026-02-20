@@ -15,6 +15,24 @@ class linkedlist {
     Node tail;
     int size;
 
+    int search(int val) {
+        if (head == null) {
+            return -1;
+        }
+        Node temp = head;
+        int indx = 0;
+
+        while (temp != null) {
+            if (temp.val == val) {
+                return indx;
+            }
+            temp = temp.next;
+            indx++;
+        }
+        return -1;
+
+    }
+
     void addatTail(int val) {
 
         Node temp = new Node(val);
@@ -55,6 +73,26 @@ class linkedlist {
 
     }
 
+    void insert(int val, int idx) {
+        if (idx < 0 || idx > size) {
+            System.out.println("invalid index.");
+        } else if (idx == 0) {
+            addatHead(val);
+        } else if (idx == size) {
+            addatTail(val);
+        } else {
+            Node temp = head;
+            for (int i = 1; i <= idx - 1; i++) {
+                temp = temp.next;
+            }
+            Node t = new Node(val);
+            t.next = temp.next;
+            temp.next = t;
+            size++;
+
+        }
+    }
+
     void DeleteAthead() {
         if (head == null) {
             System.out.println("this is an empty linkedlist:-");
@@ -79,7 +117,10 @@ public class AddAttail {
         ll.Display();
         ll.DeleteAthead();
         ll.Display();
+        System.out.println(ll.search(363));
         System.out.print(ll.size);
+        ll.insert(200, 2);
+        ll.Display();
 
         // Node a = new Node(10);
         // Node b = new Node(20);
