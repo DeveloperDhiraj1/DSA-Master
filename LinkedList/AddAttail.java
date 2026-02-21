@@ -102,6 +102,33 @@ class linkedlist {
         size--;
     }
 
+    int get(int idx) {
+        Node temp = head;
+        for (int i = 1; i <= idx; i++) {
+            temp = temp.next;
+        }
+        return temp.val;
+
+    }
+
+    void delete(int idx) {
+        if (idx < 0 || idx == size) {
+            return;
+        }
+        if (idx == 0) {
+            DeleteAthead();
+            return;
+        }
+        Node temp = head;
+        for (int i = 1; i <= idx - 1; i++) {
+            temp = temp.next;
+        }
+        temp.next = temp.next.next;
+        if (idx == size - 1) {
+            tail = temp;
+            size--;
+        }
+    }
 }
 
 public class AddAttail {
@@ -120,6 +147,10 @@ public class AddAttail {
         System.out.println(ll.search(363));
         System.out.print(ll.size);
         ll.insert(200, 2);
+        ll.Display();
+        ll.delete(2);
+        ll.Display();
+        ll.get(3);
         ll.Display();
 
         // Node a = new Node(10);
