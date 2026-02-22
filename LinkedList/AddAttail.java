@@ -14,6 +14,32 @@ class linkedlist {
     Node head;
     Node tail;
     int size;
+    // Method 1
+
+    int getMiddle(int val) {
+
+        Node slow = head;
+        Node fast = head;
+
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow.val;
+
+        // Method 2
+        // int length = 0;
+        // Node temp = head;
+        // while (temp != null) {
+        //     temp = temp.next;
+        //     length++;
+        // }
+        // temp = head;
+        // for (int i = 1; i <= length / 2; i++) {
+        //     temp = temp.next;
+        // }
+        // return temp.val;
+    }
 
     int search(int val) {
         if (head == null) {
@@ -152,6 +178,7 @@ public class AddAttail {
         ll.Display();
         ll.get(3);
         ll.Display();
+        System.out.println(ll.getMiddle(2));
 
         // Node a = new Node(10);
         // Node b = new Node(20);
