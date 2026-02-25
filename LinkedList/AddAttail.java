@@ -15,6 +15,22 @@ class linkedlist {
     Node tail;
     int size;
 
+    Node Duplicat_element(Node head) {
+        Node i = head;
+        Node j = head;
+        while (j != null) {
+            if (i.val == j.val) {
+                j = j.next;
+            } else {
+                i.next = j;
+                i = j;
+            }
+
+        }
+        i.next = j;
+        return head;
+    }
+
     Node intersection(Node head1, Node head2) {
         int len1 = 0;
         Node temp1 = head1;
@@ -213,23 +229,25 @@ public class AddAttail {
         linkedlist ll = new linkedlist();
         ll.addatTail(303);
         ll.addatTail(313);
-        ll.addatTail(353);
+        ll.addatTail(363);
         ll.addatTail(363);
         ll.addatTail(323);
         ll.addatHead(98);
         ll.Display();
-        ll.DeleteAthead();
+        //ll.DeleteAthead();
         ll.Display();
-        System.out.println(ll.search(363));
-        System.out.print(ll.size);
-        ll.insert(200, 2);
-        ll.Display();
-        ll.delete(2);
-        ll.Display();
-        ll.get(3);
-        ll.Display();
-        System.out.println(ll.getMiddle(2));
-        System.out.println(ll.detect_loop());
+        // System.out.println(ll.search(363));
+        // System.out.print(ll.size);
+        // ll.insert(200, 2);
+        // ll.Display();
+        // ll.delete(2);
+        // ll.Display();
+        // ll.get(3);
+        // ll.Display();
+        // System.out.println(ll.getMiddle(2));
+        // System.out.println(ll.detect_loop());
+        //System.out.println(ll.Duplicat_element());
+        //ll.Display();
 
         // Node a = new Node(10);
         // Node b = new Node(20);
